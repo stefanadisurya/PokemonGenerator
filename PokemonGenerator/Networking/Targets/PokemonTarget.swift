@@ -7,10 +7,13 @@
 
 import Moya
 
+// MARK: - Cases
 internal enum PokemonTarget {
+    /// Get data from PokeAPI
     case getPokemon
 }
 
+// MARK: - Conform TargetType
 extension PokemonTarget: TargetType {
     
     internal var baseURL: URL {

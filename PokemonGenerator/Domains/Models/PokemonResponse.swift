@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: - Data Model
 internal struct PokemonResponse: Decodable {
     internal let results: [ResultResponse]
 }

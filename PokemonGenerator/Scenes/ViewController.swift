@@ -9,12 +9,15 @@ import UIKit
 
 internal final class ViewController: UIViewController {
 
+    // MARK: - UI Elements
     @IBOutlet weak var pokemonTextLabel: UILabel!
     @IBOutlet weak var generateButton: UIButton!
     
+    // MARK: - Data
     private var data: [ResultResponse] = []
     private var selectedPokemon: String = ""
     
+    // MARK: - Methods
     internal override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
