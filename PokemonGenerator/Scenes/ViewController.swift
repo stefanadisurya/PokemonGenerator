@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+internal final class ViewController: UIViewController {
 
     @IBOutlet weak var pokemonTextLabel: UILabel!
     @IBOutlet weak var generateButton: UIButton!
@@ -15,10 +15,10 @@ class ViewController: UIViewController {
     private var data: [ResultResponse] = []
     private var selectedPokemon: String = ""
     
-    override func viewDidLoad() {
+    internal override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        getPokemon()
+        fetchData()
     }
     
     private func setupUI() {
@@ -32,7 +32,7 @@ class ViewController: UIViewController {
         pokemonTextLabel.text = "You have chosen \(selectedPokemon.capitalized)!"
     }
     
-    private func getPokemon() {
+    private func fetchData() {
         APIService.shared.GET(target: .getPokemon) { [weak self] result in
             guard let self = self else { return }
             switch result {

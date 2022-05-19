@@ -13,32 +13,32 @@ internal enum PokemonTarget {
 
 extension PokemonTarget: TargetType {
     
-    var baseURL: URL {
+    internal var baseURL: URL {
         return URL(string: "https://pokeapi.co")!
     }
     
-    var path: String {
+    internal var path: String {
         switch self {
         case .getPokemon:
             return "/api/v2/pokemon"
         }
     }
     
-    var method: Method {
+    internal var method: Method {
         switch self {
         case .getPokemon:
             return .get
         }
     }
     
-    var task: Task {
+    internal var task: Task {
         switch self {
         case .getPokemon:
             return .requestPlain
         }
     }
     
-    var headers: [String : String]? {
+    internal var headers: [String : String]? {
         return nil
     }
     
