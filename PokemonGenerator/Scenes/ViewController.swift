@@ -22,14 +22,14 @@ class ViewController: UIViewController {
     }
     
     private func setupUI() {
-        pokemonTextLabel.text = "You have not chosen any Pokemon"
+        pokemonTextLabel.text = "No Pokemon ❌"
         generateButton.layer.cornerRadius = 10
     }
     
     @IBAction func generateButtonTapped(_ sender: Any) {
         guard let randomizedElement = data.randomElement() else { return }
         self.selectedPokemon = randomizedElement.name
-        pokemonTextLabel.text = selectedPokemon
+        pokemonTextLabel.text = "You have chosen \(selectedPokemon.capitalized)!"
     }
     
     private func getPokemon() {
